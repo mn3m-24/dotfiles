@@ -1,0 +1,44 @@
+#------------------------------------------
+# Font Configuration
+#------------------------------------------
+# font-family = FiraCode Nerd Font Mono
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 15
+adjust-cell-height = 15%
+
+#------------------------------------------
+# Visual Appearance
+#------------------------------------------
+theme = Ghostty Default StyleDark
+background = 1C2021
+# foreground = d4be98
+background-opacity = 0.90
+window-colorspace = "display-p3"
+macos-titlebar-style = transparent
+cursor-style = block
+
+#------------------------------------------
+# Window Behavior
+#------------------------------------------
+# window-padding-balance = true
+window-save-state = always
+confirm-close-surface = false
+
+#------------------------------------------
+# Terminal Integration
+#------------------------------------------
+shell-integration-features = no-cursor,sudo,no-title
+
+#------------------------------------------
+# Mouse Behavior
+#------------------------------------------
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+copy-on-select = clipboard
+
+#------------------------------------------
+# Keybindings - General
+#------------------------------------------
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>x=close_surface
+keybind = cmd+s>n=new_window

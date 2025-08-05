@@ -1,0 +1,11 @@
+[mgr]
+prepend_keymap = [
+    { on = ["w"], run = "shell $SHELL --block", desc = "Open shell" }
+]
+# Custom Goto
+append_keymap = [
+    {on = [ "g", "/" ], run = "cd /", desc = "Go to root directory"},
+    {on = [ "g", "m" ], run = "cd /mnt/me/", desc = "Go to mnt/me directory"},
+    {on = [ "g", "t" ], run = "cd ~/.trash/", desc = "Go to trash directory"},
+    # {on = [ "g", "p" ], run = "cd ~/Pictures/", desc = "Go to Pictures directory"}
+        ]

@@ -1,0 +1,8 @@
+# ~/.config/lf/lfrc
+# Main configuration file that sources other modules
+
+# Source all modular configs
+source "~/.config/lf/settings.conf"
+source "~/.config/lf/functions.conf"
+source "~/.config/lf/mappings.conf"
+

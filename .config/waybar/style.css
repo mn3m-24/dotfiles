@@ -1,0 +1,156 @@
+* {
+    font-family: "JetBrainsMonoNL Nerd Font";
+    font-size: 13px;
+    transition: background-color .3s ease-out;
+}
+
+window#waybar {
+    background: rgba(40, 40, 40, 0.85);
+    color: #f5f5f5;
+    font-family: "JetBrainsMonoNL Nerd Font";
+    transition: background-color .5s;
+}
+
+#window {
+    margin: 0 8px;
+    padding: 4px 8px;
+}
+
+.modules-left,
+.modules-center,
+.modules-right
+{
+    background: rgba(20, 20, 20, 0.8);
+    margin: 4px 8px;
+    padding: 0 4px;
+    border-radius: 12px;
+}
+.modules-left {
+    padding: 0;
+}
+.modules-center {
+    padding: 0 8px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#language,
+#mpd {
+    padding: 0 8px;
+    border-radius: 12px;
+}
+
+/* Individual module colors */
+#clock {
+    color: #689d6a;
+}
+
+#battery {
+    color: #fabd2f;
+}
+
+#cpu {
+    color: #fb4934;
+}
+
+#memory {
+    color: #d3869b;
+}
+
+#network {
+    color: #8ec07c;
+}
+
+#pulseaudio {
+    color: #83a598;
+}
+
+#backlight {
+    color: #fe8019;
+}
+
+#language {
+    color: #458588;
+}
+
+#clock:hover {
+    background: rgba(104, 157, 106, 0.3);
+}
+
+#battery:hover {
+    background: rgba(250, 189, 47, 0.3);
+}
+
+#cpu:hover {
+    background: rgba(251, 73, 52, 0.3);
+}
+
+#memory:hover {
+    background: rgba(211, 134, 155, 0.3);
+}
+
+#network:hover {
+    background: rgba(142, 192, 124, 0.3);
+}
+
+#pulseaudio:hover {
+    background: rgba(131, 165, 152, 0.3);
+}
+
+#backlight:hover {
+    background: rgba(254, 128, 25, 0.3);
+}
+
+#language:hover {
+    background: rgba(69, 133, 136, 0.3);
+}
+
+#disk:hover,
+#temperature:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#mpd:hover {
+    background: rgba(60, 60, 60, 0.3);
+}
+
+#workspaces button {
+  background: transparent;
+  font-family:
+    SpaceMono Nerd Font,
+    feather;
+  font-weight: 900;
+  font-size: 12pt;
+  color: #d4be98;
+  border: none;
+  border-radius: 12px;
+}
+
+#workspaces button.active {
+    background: #665c54;
+    color: #fbf1c7;
+}
+
+#workspaces button:hover {
+  background: #504945;
+  color: #ebdbb2;
+  box-shadow: none;
+}

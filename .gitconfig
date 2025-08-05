@@ -1,0 +1,17 @@
+[user]
+	name = abdalmonem
+	email = 112807908+mn3m-24@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[alias]
+	; st = status
+	; co = checkout
+	; br = branch
+	; ci = commit
+	; cm = "commit -m"
+	; last = "log -1 HEAD"
+	;
+	; unstage = "reset HEAD"
+	; df = diff

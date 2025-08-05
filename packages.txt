@@ -1,0 +1,68 @@
+# Shell and Terminal Utilities
+
+# Essential Applications
+alacritty  # terminal emulator
+zen-browser# Web browser
+neovim     # Modern Vim-based text editor
+fzf        # Fuzzy finder, useful for searching files and commands
+htop       # Interactive process viewer
+keepassxc  # Password manager
+tk         # Toolkit for GUI applications (used by some programs)
+
+# Other
+bibata-cursor-theme # cool cursor theme
+
+# Multimedia Tools
+ffmpeg    # Multimedia framework for handling audio, video, and streaming
+mpv       # Media player
+yt-dlp    # YouTube and video downloader
+zathura   # Lightweight document viewer
+zathura-pdf-mupdf # PDF backend for Zathura
+imv       # Minimalist image viewer
+
+# File Management
+yazi        # Terminal file manager
+nemo      # GUI file manager (Cinnamon's default)
+gvfs      # Virtual file system for better integration with graphical file managers
+gvfs-mtp  # MTP support for connecting mobile devices
+
+# Networking and Printing and Bluetooth
+NetworkManager        # Network management daemon
+nm-connection-editor  # GUI for managing network connections
+pipewire              # Audio and video framework
+wireplumber           # Session manager for PipeWire
+cups                  # Printing system
+system-config-printer # GUI tool for printer management
+blueman               # Bluetooth Manager
+
+# Document and Torrent Handling
+pandoc            # Universal document converter
+transmission-gtk  # GTK frontend for Transmission BitTorrent client
+
+# Virtualization
+qemu-desktop    # QEMU for desktop virtualization
+libvirt         # Toolkit for managing virtual machines
+virt-manager    # GUI for managing virtual machines
+bridge-utils    # Network bridging tools for VMs
+
+# Android Tools
+android-tools   # Android debugging tools (adb, fastboot)
+
+# Wayland and Hyprland Environment
+hyprland                     # Wayland compositor
+waybar                       # Customizable status bar
+wl-clipboard                 # Wayland clipboard manager
+grim                          # Screenshot tool for Wayland
+slurp                         # Select area for screenshots or recording
+hyprpaper                     # Wallpaper manager for Hyprland
+hyprlock                      # Lock screen for Hyprland
+hypridle                      # Idle management daemon
+brightnessctl                 # Control screen brightness
+qt5-wayland, qt6-wayland      # Enable Wayland support for Qt5/Qt6 apps
+xdg-desktop-portal-hyprland   # Portal for Hyprland-specific desktop integration
+wf-recorder                   # Screen recorder for Wayland
+libva-nvidia-driver           # VA-API driver for NVIDIA hardware acceleration
+
+
+# for niri window manager:
+niri swayidle swaylock xwayland-satellite

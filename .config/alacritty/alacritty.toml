@@ -1,0 +1,35 @@
+# Colors
+[general]
+import = ["themes/gruvbox-dark-hard.toml"]
+
+# Font configuration
+[font]
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+bold = { family = "FiraCode Nerd Font Mono", style = "Bold" }
+italic = { family = "FiraCode Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font Mono", style = "Bold Italic" }
+size = 16.0
+
+# Window configuration
+[window]
+# opacity = 0.90
+decorations = "full"
+padding = { x = 5, y = 5 }
+
+# Cursor configuration
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 15
+
+# Mouse configuration
+[mouse]
+hide_when_typing = true
+
+# Scrolling
+[scrolling]
+history = 20000
+multiplier = 5
+
+[selection]
+save_to_clipboard = true
