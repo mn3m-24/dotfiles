@@ -1,0 +1,240 @@
+# Sway configuration converted from Hyprland
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+set $mod Mod1
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Programs (converted from your Hyprland config)
+set $terminal alacritty
+set $fileManager $terminal -e yazi
+set $menu rofi
+set $editor $terminal -e nvim
+set $browser firefox
+
+font DejaVuSansM Nerd Font Mono 10
+
+### Monitor Configuration
+# Sway equivalent of your Hyprland monitor config
+# Note: Sway doesn't support VRR directly, you may need wlr-randr for advanced features
+output eDP-1 scale 1.20
+
+### XWayland Configuration
+xwayland enable
+# Note: Sway handles XWayland scaling differently than Hyprland
+
+### Input Configuration
+input type:keyboard {
+    xkb_layout us,ara
+    xkb_options ctrl:menu_rctrl,caps:swapescape,grp:win_space_toggle
+    repeat_delay 300
+    repeat_rate 35
+}
+
+input type:touchpad {
+    natural_scroll enabled
+    tap enabled
+    tap_button_map lrm
+    scroll_factor 0.5
+    middle_emulation disabled
+    drag enabled
+    drag_lock enabled
+    accel_profile flat
+}
+
+input type:pointer {
+    accel_profile flat
+}
+
+# Mouse sensitivity for specific device (if needed)
+input "epic-mouse-v1" {
+    pointer_accel -0.5
+}
+
+### Idle Configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+
+### Autostart (exec-once equivalent)
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec /usr/lib/polkit-kde-authentication-agent-1
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+exec nm-applet --indicator
+exec dunst
+exec tutanota-desktop
+exec waybar
+
+### Look and Feel
+# Gaps (equivalent to your Hyprland gaps)
+gaps inner 5
+gaps outer 10
+
+# Borders (equivalent to your border_size)
+default_border pixel 2
+default_floating_border pixel 2
+
+# Colors
+client.focused          #81A1C1 #2E3440 #ECEFF4 #81A1C1 #81A1C1
+client.focused_inactive #4C566A #2E3440 #D8DEE9 #4C566A #4C566A
+client.unfocused        #4C566A #2E3440 #D8DEE9 #4C566A #4C566A
+
+# Window opacity (Sway doesn't have built-in opacity, would need compositor features)
+# for_window [class=".*"] opacity 1.0
+
+# Floating window rules
+for_window [app_id="pavucontrol"] floating enable, resize set 60ppt 70ppt, move position center
+for_window [app_id="blueman-manager"] floating enable, resize set 60ppt 70ppt, move position center
+for_window [app_id="nm-connection-editor"] floating enable, move position center
+for_window [title="Picture-in-Picture"] floating enable
+for_window [class="polkit-kde-authentication-agent-1"] floating enable
+
+# Disable focus follows mouse (equivalent to follow_mouse in Hyprland)
+focus_follows_mouse yes
+
+### Key Bindings
+# Basic operations
+bindsym $mod+Return exec $terminal
+bindsym $mod+q kill
+bindsym $mod+Shift+q exec swaymsg '[con_id=__focused__] kill'
+bindsym $mod+Shift+x exit
+bindsym $mod+Shift+Escape exec pkill waybar && waybar &
+bindsym $mod+x exec swaylock -f -c 000000
+bindsym $mod+m exec $menu -show drun
+bindsym $mod+Shift+m exec "~/.config/rofi/powermenu.sh"
+
+# Applications
+bindsym $mod+d exec $fileManager
+bindsym $mod+e exec $editor
+bindsym $mod+b exec $browser
+
+# Window management
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+f fullscreen
+bindsym $mod+c move position center
+bindsym $mod+t split toggle
+bindsym $mod+Tab focus next
+
+# Screenshots (using grim and slurp like your Hyprland config)
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+z exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+z exec grim - | wl-copy
+
+# Focus movement (vim keys)
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move windows (vim keys)
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Arrow key alternatives
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Scratchpad (equivalent to special workspace)
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+
+# Previous workspace
+bindsym $mod+grave workspace back_and_forth
+
+# Mouse bindings
+floating_modifier $mod normal
+
+# Resize mode
+set $mode_resize Resize
+mode "$mode_resize" {
+    # Vim keys for resizing
+    bindsym $left resize shrink width 60px
+    bindsym $down resize grow height 60px
+    bindsym $up resize shrink height 60px
+    bindsym $right resize grow width 60px
+
+    # Arrow keys
+    bindsym Left resize shrink width 60px
+    bindsym Down resize grow height 60px
+    bindsym Up resize shrink height 60px
+    bindsym Right resize grow width 60px
+
+    # Exit resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+ctrl+$left resize shrink width 60px
+bindsym $mod+ctrl+$down resize grow height 60px
+bindsym $mod+ctrl+$up resize shrink height 60px
+bindsym $mod+ctrl+$right resize grow width 60px
+
+# Media keys
+bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+# bindsym $mod+Shift+m exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# Brightness
+# Decrease screen brightness
+bindsym Mod4+F5 exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessDown exec brightnessctl s 5%-
+# Increase screen brightness
+bindsym Mod4+F6 exec brightnessctl set +5%
+bindsym --locked XF86MonBrightnessUp exec brightnessctl s 5%+
+
+
+# Media controls
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPause exec playerctl play-pause
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+# Layout bindings
+bindsym $mod+w layout tabbed
+bindsym $mod+shift+e layout toggle split
+
+# Focus parent/child
+bindsym $mod+a focus parent
+
+### Include additional configs
+include /etc/sway/config.d/*
