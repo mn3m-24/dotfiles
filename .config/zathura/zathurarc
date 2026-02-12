@@ -1,0 +1,80 @@
+#
+# Keybindings
+#
+
+# Print with (ctrl + p)
+map ctrl+p print
+
+#
+# Clipboard & Selection
+#
+
+# Copy to system's clipboard
+set selection-clipboard clipboard
+
+# Enable clipboard persistence
+set selection-notification false
+
+#
+# Visual Settings
+#
+
+# Default to dark mode (uncomment to enable)
+# set recolor true
+
+# Preserve color hue when in dark mode
+set recolor-keephue true
+
+# Set font and size
+# set font "monospace 10"
+
+# Status bar settings
+set statusbar-basename true
+set statusbar-home-tilde true
+set statusbar-page-percent true
+
+#
+# Window Settings
+#
+
+# Set window title to document basename
+set window-title-basename true
+set window-title-page true
+
+# Window dimensions
+set window-height 1000
+set window-width 800
+
+#
+# Document Display
+#
+
+# Open in best-fit mode
+set adjust-open best-fit
+
+# Set reasonable page padding
+set page-padding 1
+
+# Better page navigation
+set page-cache-size 15
+set scroll-page-aware true
+set scroll-step 80
+
+# Show hidden files in file chooser
+set show-hidden true
+
+# Better searching
+set incremental-search true
+set search-hadjust true
+
+#
+# Performance Settings
+#
+
+# Increase render quality
+set render-loading true
+set render-loading-bg "#282a36"
+set render-loading-fg "#f8f8f2"
+
+# Import theme (adjust path as needed)
+include "/home/mn3m/.config/zathura/themes/gruvbox"

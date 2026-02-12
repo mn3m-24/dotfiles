@@ -1,0 +1,33 @@
+[
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // --- Tab Iteration (H & L) ---
+      // These will cycle through files within the active split
+      "H": "pane::ActivatePreviousItem",
+      "L": "pane::ActivateNextItem",
+
+      // --- Split Navigation (Leader + hjkl) ---
+      // These will move your focus between different split panes
+      "space h": "workspace::ActivatePaneLeft",
+      "space l": "workspace::ActivatePaneRight",
+      "space k": "workspace::ActivatePaneUp",
+      "space j": "workspace::ActivatePaneDown",
+
+      // --- Additional Optimized Nav ---
+      "space v": "pane::SplitVertical",
+      "space s": "pane::SplitHorizontal",
+      "space q": "pane::CloseActiveItem",
+      "space e": "project_panel::ToggleFocus",
+      "space f": "file_finder::Toggle",
+      "space b": "tab_switcher::Toggle",
+      "space /": "pane::DeploySearch",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::SwitchToNormalMode",
+    },
+  },
+]
